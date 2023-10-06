@@ -1,4 +1,3 @@
-
 body {
     background-color: black;
     color: lightblue;
@@ -17,6 +16,9 @@ h2 {
 ul {
     list-style-type: none;
     padding: 0;
+    overflow: auto;
+    height: calc(60vh - 40px);
+    width: 100vw;
 }
 
 li {
@@ -29,22 +31,41 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration:underline;
 }
 
 iframe {
     width: 100%;
     height: 60vh;
     margin-bottom: 20px;
+    position: sticky;
+    border: none;
+    top: 0;
+    background-color: #1a467f76;
 }
 
 @media (min-width: 600px) {
     body {
         flex-direction: row;
+        align-items: flex-start;
     }
 
     #links, #display {
         width: 50%;
         padding: 20px;
+    }
+    
+    ul {
+        height: calc(100vh - 40px);
+        width: 100%;
+    }
+}
+
+@media (max-width: 599px) {
+    iframe {
+        height: 40vh;
+    }
+    ul {
+        height: calc(60vh - 40px);
     }
 }
